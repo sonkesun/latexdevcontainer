@@ -9,7 +9,7 @@
     ],
     "shutdownAction": "stopCompose",
     "workspaceFolder": "/workspace",
-    "postCreateCommand": "tlmgr install  booktabs  csquotes paralist multirow setspace listings xcolor pdfpages caption subfig amsmath enumitem wrapfig eurosym siunitx polynom  ifsym hyperref siunitx wasysym units mnsymbol atbegshi stackengine listings pdflscape wasysym babel-german && texhash && sudo apt-get install texlive-fonts-recommended && sudo apt-get install texlive-lang-german",
+    "postCreateCommand": "",
     "extensions": [
         "james-yu.latex-workshop",
         // Git
