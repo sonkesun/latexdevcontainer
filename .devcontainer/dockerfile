@@ -1,3 +1,3 @@
 FROM qmcgaw/latexdevcontainer
-RUN sudo apt-get install texlive-fonts-recommended
+RUN sudo apt-get install texlive-fonts-recommended -y
 RUN tlmgr install booktabs csquotes paralist multirow setspace listings xcolor pdfpages caption subfig enumitem wrapfig eurosym siunitx polynom  ifsym  siunitx wasysym units mnsymbol  stackengine listings pdflscape wasysym
