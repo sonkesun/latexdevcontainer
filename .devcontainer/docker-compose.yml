@@ -2,8 +2,7 @@ version: "3.7"
 
 services:
   vscode:
-    image: qmcgaw/latexdevcontainer
-    build: .
+    image: thomasweise/docker-texlive-full
     volumes:
       - ../:/workspace
       - ~/.ssh:/home/vscode/.ssh:ro
