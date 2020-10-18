@@ -1,0 +1,244 @@
+%% !TEX TS-program = Arara
+%% arara: pdflatex: {shell: yes}
+%% arara: pdflatex: {shell: yes}
+%% arara: clean: { extensions: [ log, aux, nav, out, snm, vrb, toc ] }
+ 
+\documentclass[a4paper,ngerman,12pt]{exam} 
+
+\input{../packages}
+\usepackage[pdf]{pstricks}
+\usepackage{pstricks-add}
+\usepackage{auto-pst-pdf}
+
+\input{../header}
+
+\firstpageheader{Mathematik 11h (Wissel)\\\today}{Wiederholung des Themas Funktionen}{\includegraphics[scale=0.38]{../logo.jpg}}
+\runningheader{Mathematik 11h (Wissel)\\\today}{Wiederholung des Themas Funktionen}{\includegraphics[scale=0.38]{../logo.jpg}}
+\firstpagefooter{}{}{\thepage\,/\,\numpages}
+\runningfooter{}{}{\thepage\,/\,\numpages}
+
+
+\begin{document}
+
+\vspace*{0.3cm}
+\begin{center}
+  \huge\bfseries Handout 03:\\ Quadratische Funktionen (Normalparabel)
+\end{center}
+
+\section*{Hausaufgabe}
+
+\par Bitte lest zur nächsten Präsenzstunde die Seiten 32 bis 35 im Buch und bearbeitet damit die Übungen 3, 5 und 8.
+
+\par Wie immer optional könnt ihr - wie besprochen - die (handschriftlichen) Ausarbeitungen zu den folgenden Aufgaben dieses Handouts auch in digitaler Form (pdf) bis zum 3.9. auf Nextcloud oder LANIS hochzuladen. Achtet dabei, die Dateien sinnvoll (ohne Umlaute) und mit einem Bezug zum Handout zu benennen. \textbf{Wichtig:} Vergesst nicht, den Haken in LANIS zu setzen, wenn ihr die Hausaufgabe bearbeitet habt.
+
+\section*{Übungen}
+
+\begin{questions}
+  %  \printanswers
+
+  %################################################################################
+  \question %12
+  Beschreibe den Einfluss einer Änderung der Werte von $a$, $b$ und $c$ in $y=a\cdot\left(x-b\right)^2+c$ auf den Graphen der Funktion.
+  %################################################################################
+  \begin{solution}
+    Beschreibe den Einfluss einer Änderung der Werte von $a$, $b$ und $c$ in $y=a\cdot\left(x-b\right)^2+c$ auf den Graphen der Funktion.
+
+  \end{solution}
+  %################################################################################
+  \question %13
+  Wie lauten die Zuordnungsvorschriften der im Folgenden abgebildeten quadratischen Funktionen?\newline
+  %################################################################################
+
+  \begin{minipage}{0.3\textwidth}
+    %
+    %-------------------------------------------------------------------------------
+    \begin{pspicture*}(-15,-15)(15,15)
+      \rput(-11.125,11.125){%
+        %
+        \psset{xAxisLabel=,yAxisLabel=}
+        \begin{psgraph}[axesstyle=none,labels=none,ticks=none](0,0)(-5,-3)(5,7){0.9\textwidth}{0.9\textwidth}
+
+          \multido{\ra=-4+1}{9}{%
+            \multido{\rb=-2+1}{9}{%
+              \psline[linecolor=black!15](\ra,-2)(\ra,6)
+              \psline[linecolor=black!15](-4,\rb)(4,\rb)
+            }}
+
+          \rput(0,2){%
+            %
+            \begin{psgraph}[axesstyle=axes,arrows=->,Dx=2,Dy=2,labels=all,ticks=all](0,0)(-5,-3)(5,7){0.9\textwidth}{0.9\textwidth}
+              %
+              \uput[-90](5,0){$x$}
+              \uput[180](0,7){$y$}
+
+              \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2.45}{2.45}{x^2}
+
+            \end{psgraph}}
+          %
+        \end{psgraph}
+      }
+      %
+      \rput(-13.125,13.125){a)}
+      %
+    \end{pspicture*}%
+    %-------------------------------------------------------------------------------
+    %
+  \end{minipage}%
+  \hfill\begin{minipage}{0.3\textwidth}
+    %
+    %-------------------------------------------------------------------------------
+    \begin{pspicture*}(-15,-15)(15,15)
+      \rput(-11.125,11.125){%
+        %
+        \psset{xAxisLabel=,yAxisLabel=}
+        \begin{psgraph}[axesstyle=none,labels=none,ticks=none](0,0)(-3,-3)(7,7){0.9\textwidth}{0.9\textwidth}
+
+          \multido{\ra=-2+1}{9}{%
+            \multido{\rb=-2+1}{9}{%
+              \psline[linecolor=black!15](\ra,-2)(\ra,6)
+              \psline[linecolor=black!15](-2,\rb)(6,\rb)
+            }}
+
+          \rput(2,2){%
+            %
+            \begin{psgraph}[axesstyle=axes,arrows=->,Dx=2,Dy=2,labels=all,ticks=all](0,0)(-3,-3)(7,7){0.9\textwidth}{0.9\textwidth}
+              %
+              \uput[-90](7,0){$x$}
+              \uput[180](0,7){$y$}
+
+              \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{2}{6}{(x-4)^2+2}
+
+            \end{psgraph}}
+          %
+        \end{psgraph}
+      }
+      %
+      \rput(-13.125,13.125){b)}
+      %
+    \end{pspicture*}%
+    %-------------------------------------------------------------------------------
+    %
+  \end{minipage}%
+  \hfill\begin{minipage}{0.3\textwidth}
+    %
+    %-------------------------------------------------------------------------------
+    \begin{pspicture*}(-15,-15)(15,15)
+      \rput(-11.125,11.125){%
+        %
+        \psset{xAxisLabel=,yAxisLabel=}
+        \begin{psgraph}[axesstyle=none,labels=none,ticks=none](0,0)(-7,-3)(3,7){0.9\textwidth}{0.9\textwidth}
+
+          \multido{\ra=-6+1}{9}{%
+            \multido{\rb=-2+1}{9}{%
+              \psline[linecolor=black!15](\ra,-2)(\ra,6)
+              \psline[linecolor=black!15](-6,\rb)(2,\rb)
+            }}
+
+          \rput(-2,2){%
+            %
+            \begin{psgraph}[axesstyle=axes,arrows=->,Dx=2,Dy=2,labels=all,ticks=all](0,0)(-7,-3)(3,7){0.9\textwidth}{0.9\textwidth}
+              %
+              \uput[-90](3,0){$x$}
+              \uput[180](0,7){$y$}
+
+              \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-5.74}{1.74}{-0.5*(x+2)^2+5}
+
+            \end{psgraph}}
+          %
+        \end{psgraph}
+      }
+      %
+      \rput(-13.125,13.125){c)}
+      %
+    \end{pspicture*}%
+    %-------------------------------------------------------------------------------
+    %
+  \end{minipage}%
+  \begin{solution}
+    \quad\begin{minipage}{0.3\textwidth}
+      a) $\displaystyle y=x^2$
+    \end{minipage}%
+    \hfill\begin{minipage}{0.3\textwidth}
+      b) $\displaystyle y=\left(x-4\right)^2+2$
+    \end{minipage}%
+    \hfill\begin{minipage}{0.3\textwidth}
+      c) $\displaystyle y=-\frac{1}{2}\cdot\left(x+2\right)^2+5$
+    \end{minipage}
+  \end{solution}
+  %################################################################################
+  \question %14
+  Gib für die im Folgenden angegebenen Funktionen jeweils die Koordinaten des Scheitelpunktes an und zeichne den entsprechenden Funktionsgraphen.\newline
+  %################################################################################
+
+  \hspace{1cm}\begin{minipage}{5.5cm}
+    \begin{enumerate}[label=\alph*)]
+      \item $f(x)=(x-1)^2-2$
+      \item $f(x)=2\cdot(x+2)^2-4$
+    \end{enumerate}
+  \end{minipage}
+  \begin{minipage}{5.5cm}
+    \begin{enumerate}[label=\alph*)]
+      \setcounter{enumi}{2}
+      \item $f(x)=-x^2+3$
+      \item $f(x)=0{,}5\cdot(x-3)^2-1$
+    \end{enumerate}
+  \end{minipage}
+
+  \begin{solution}
+    $\Rightarrow$ auch hier könnt Ihr Eure Zeichnungen mit Geogebra überprüfen. Zum Zeichnen von quadratischen Funktionen wird immer erst der Scheitelpunkt der Funktion markiert. Von diesem Scheitelpunkt aus geht man eins nach rechts und $a$ nach oben für $|a|>0$, $a$ nach unten für $|a|<0$ und markiert die Stelle. Anschließend geht man vom Scheitelpunkt aus eins nach links und ebenfalls wieder den Wert von $a$ nach oben/unten. Mit Hilfe dieser drei Punkte kann der Graph skizziert werden.
+
+  \end{solution}
+  %################################################################################
+  \question %15
+  Welche quadratische Funktion erfüllt jeweils die beschriebenen Eigenschaften?\newline
+  %################################################################################
+
+  \hspace{1cm}\begin{minipage}{0.9\textwidth}
+    \begin{enumerate}[label=\alph*)]
+      \item Normalparabel um 4 nach rechts verschoben
+      \item nach unten geöffnete Parabel mit Scheitelpunkt S$(-2\mid3)$, mit Faktor 3 in $y$-Richtung gestreckt
+      \item ** Scheitelpunkt bei S$(4\mid5)$, geht durch A$(1\mid23)$
+    \end{enumerate}
+  \end{minipage}
+
+  \begin{solution}
+    \begin{enumerate}[label=\alph*)]
+      \item Normalparabel um 4 nach rechts verschoben
+            %
+            \begin{equation*}
+              f(x)=(x-4)^2
+            \end{equation*}
+
+      \item nach unten geöffnete Parabel mit Scheitelpunkt S$(-2\mid3)$, mit Faktor 3 in $y$-Richtung gestreckt
+            %
+            \begin{equation*}
+              f(x)=-3\cdot(x+2)^2+3
+            \end{equation*}
+      \item ** Scheitelpunkt bei S$(4\mid5)$, geht durch A$(1\mid23)$
+
+
+            \begin{align*}
+              f(x) & =a\cdot(x-4)^2+5             \\[3mm]
+              23   & =a\cdot(1-4)^2+5             \\
+              18   & =9a\quad\Rightarrow\quad a=2 \\[3mm]
+              f(x) & =2\cdot(x-4)^2+5
+            \end{align*}
+
+    \end{enumerate}
+  \end{solution}
+
+\end{questions}
+
+
+%\par \textbf{Tipp 1:}
+
+\par \textbf{Tipp:} Die zu dem Thema zugehörige Playlist von Daniel Jung lautet \href{https://t1p.de/ni5e}{Lineare Funktionen (Geraden), y=m*x+n\footnote{\url{https://t1p.de/ni5e}}}, siehe auch Lesezeichen auf Nextcloud.
+
+% \begin{wrapfigure}{H!}{5cm} 
+\includegraphics[scale=0.4]{qr-code-t1p-de-xdox}\\
+%  \text{Feedback: \hyperlink{https://t1p.de/9c50}{https://t1p.de/9c50}}
+Feedback: \href{https://t1p.de/xdox}{https://t1p.de/xdox}
+
+%\newpage
+%
+\end{document}

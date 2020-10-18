@@ -5,7 +5,7 @@
     "runServices": ["vscode"],
     "shutdownAction": "stopCompose",
     "workspaceFolder": "/workspace",
-    "postCreateCommand": "",
+    "postCreateCommand": "tlmgr install  && texhash",
     "extensions": [
         "james-yu.latex-workshop",
         // Git
