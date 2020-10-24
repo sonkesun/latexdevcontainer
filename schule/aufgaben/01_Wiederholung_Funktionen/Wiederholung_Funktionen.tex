@@ -2,9 +2,7 @@
 %% arara: pdflatex: {shell: yes}
 %% arara: pdflatex: {shell: yes}
 %% arara: clean: { extensions: [ log, aux, nav, out, snm, vrb, toc ] }
- 
-\documentclass[a4paper,ngerman,12pt]{exam} 
-
+\documentclass[a4paper,ngerman,12pt]{exam}
 \input{../packages}
 \usepackage[pdf]{pstricks}
 \usepackage{pstricks-add}
@@ -22,7 +20,7 @@
 
 \vspace*{0.3cm}
 \begin{center}
-  \huge\bfseries Handout 01:\\ Lineare Funktionen
+	\huge\bfseries Handout 01:\\ Lineare Funktionen
 \end{center}
 
 \section*{Hausaufgabe}
@@ -36,959 +34,959 @@
 \section*{Übungen}
 
 \begin{questions}
-  \printanswers
-  \question %1
-  Bei welchen der im Folgenden abgebildeten Zuordnungen handelt es sich \textsc{nicht} um Funktionen?\newline
-  %################################################################################
-
-  \begin{minipage}{0.16\textwidth}
-    \begin{pspicture*}(-8,-8)(8,8)
-      \rput(-6,6){%
-        %
-        \psset{xAxisLabel=,yAxisLabel=}
-        \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-8.5)(2.5,8.5){0.9\textwidth}{0.9\textwidth}
-          \uput[-90](2.5,0){$x$}
-          \uput[180](0,8.5){$y$}
-
-          \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{x^3}
-
-        \end{psgraph}}
-      %
-      \rput(-7,7){a)}
-      %
-    \end{pspicture*}%
-    %-------------------------------------------------------------------------------
-    %
-  \end{minipage}%
-  \hfill\begin{minipage}{0.16\textwidth}
-    %
-    %-------------------------------------------------------------------------------
-    \begin{pspicture*}(-8,-8)(8,8)
-      \rput(-6,6){%
-        %
-        \psset{xAxisLabel=,yAxisLabel=}
-        \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
-          \uput[-90](2.5,0){$x$}
-          \uput[180](0,2.5){$y$}
-
-          \pscircle[algebraic,linewidth=1.5pt,linecolor=black!60](0,0){1.75}
-
-        \end{psgraph}}
-      %
-      \rput(-7,7){b)}
-      %
-    \end{pspicture*}%
-    %-------------------------------------------------------------------------------
-    %
-  \end{minipage}%
-  \hfill\begin{minipage}{0.16\textwidth}
-    %
-    %-------------------------------------------------------------------------------
-    \begin{pspicture*}(-8,-8)(8,8)
-      \rput(-6,6){%
-        %
-        \psset{xAxisLabel=,yAxisLabel=}
-        \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
-          \uput[-90](2.5,0){$x$}
-          \uput[180](0,2.5){$y$}
-
-          \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{(x+2)^(1/2)}
-          \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{-(x+2)^(1/2)}
-
-        \end{psgraph}}
-      %
-      \rput(-7,7){c)}
-      %
-    \end{pspicture*}%
-    %-------------------------------------------------------------------------------
-    %
-  \end{minipage}%
-  \hfill\begin{minipage}{0.16\textwidth}
-    %
-    %-------------------------------------------------------------------------------
-    \begin{pspicture*}(-8,-8)(8,8)
-      \rput(-6,6){%
-        %
-        \psset{xAxisLabel=,yAxisLabel=}
-        \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
-          \uput[-90](2.5,0){$x$}
-          \uput[180](0,2.5){$y$}
-
-          \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2.5}{2.5}{1.25}
-
-        \end{psgraph}}
-      %
-      \rput(-7,7){d)}
-      %
-    \end{pspicture*}%
-    %-------------------------------------------------------------------------------
-    %
-  \end{minipage}%
-  \hfill\begin{minipage}{0.16\textwidth}
-    %
-    %-------------------------------------------------------------------------------
-    \begin{pspicture*}(-8,-8)(8,8)
-      \rput(-6,6){%
-        %
-        \psset{xAxisLabel=,yAxisLabel=}
-        \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
-          \uput[-90](2.5,0){$x$}
-          \uput[180](0,2.5){$y$}
-
-          \psline[algebraic,linewidth=1.5pt,linecolor=black!60](1.25,-2.5)(1.25,2.5)
-
-        \end{psgraph}}
-      %
-      \rput(-7,7){e)}
-      %
-    \end{pspicture*}%
-    %-------------------------------------------------------------------------------
-    %
-  \end{minipage}
-  \begin{solution} Bei einer Zuordnung handelt es sich dann um eine Funktion, falls jedem Wert aus der Definitionsmenge der Funktion (jedem $x$-Wert) \textsc{genau ein} Wert aus der Wertemenge der Funktion (ein $y$-Wert) zugeordnet wird. Entsprechend handelt es sich bei b), c) und e) nicht um Funktionen.
-
-  \end{solution}
-  %################################################################################
-  \question %2
-  Formuliere in Fachsprache:
-  %################################################################################
-
-  \begin{enumerate}
-    \item \enquote{der Funktionswert der Funktion $f$ an der Stelle $x=2$}
-    \item \enquote{der Funktionswert der Funktion $g$ an der Stelle $x=x_0$}
-  \end{enumerate}
-
-  \begin{solution}
-    \quad\begin{minipage}{0.3\textwidth}
-      a) $\displaystyle f\left(2\right)$
-    \end{minipage}%
-    \hfill\begin{minipage}{0.3\textwidth}
-      b) $\displaystyle g\left(x_0\right)$
-    \end{minipage}%
-    \hfill\begin{minipage}{0.3\textwidth}
-      \textcolor{white}{text}
-    \end{minipage}
-  \end{solution}
-
-  %################################################################################
-  \question %3
-  Bei welchen der im Folgenden abgebildeten Zuordnungen handelt es sich um Graphen einer linearen Funktion?\newline
-  %################################################################################
-
-  \begin{minipage}{0.16\textwidth}
-    %
-    %-------------------------------------------------------------------------------
-    \begin{pspicture*}(-8,-8)(8,8)
-      \rput(-6,6){%
-        %
-        \psset{xAxisLabel=,yAxisLabel=}
-        \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-8.5)(2.5,8.5){0.9\textwidth}{0.9\textwidth}
-          \uput[-90](2.5,0){$x$}
-          \uput[180](0,8.5){$y$}
-
-          \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{4*x}
-
-        \end{psgraph}}
-      %
-      \rput(-7,7){a)}
-      %
-    \end{pspicture*}%
-    %-------------------------------------------------------------------------------
-    %
-  \end{minipage}%
-  \hfill\begin{minipage}{0.16\textwidth}
-    %
-    %-------------------------------------------------------------------------------
-    \begin{pspicture*}(-8,-8)(8,8)
-      \rput(-6,6){%
-        %
-        \psset{xAxisLabel=,yAxisLabel=}
-        \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-8.5)(2.5,8.5){0.9\textwidth}{0.9\textwidth}
-          \uput[-90](2.5,0){$x$}
-          \uput[180](0,8.5){$y$}
-
-          \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{-x^3}
-
-        \end{psgraph}}
-      %
-      \rput(-7,7){b)}
-      %
-    \end{pspicture*}%
-    %-------------------------------------------------------------------------------
-    %
-  \end{minipage}%
-  \hfill\begin{minipage}{0.16\textwidth}
-    %
-    %-------------------------------------------------------------------------------
-    \begin{pspicture*}(-8,-8)(8,8)
-      \rput(-6,6){%
-        %
-        \psset{xAxisLabel=,yAxisLabel=}
-        \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-1.5,-2.5)(3.5,2.5){0.9\textwidth}{0.9\textwidth}
-          \uput[-90](3.5,0){$x$}
-          \uput[180](0,2.5){$y$}
-
-          \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-1}{3}{-x+1}
-
-        \end{psgraph}}
-      %
-      \rput(-7,7){c)}
-      %
-    \end{pspicture*}%
-    %-------------------------------------------------------------------------------
-    %
-  \end{minipage}%
-  \hfill\begin{minipage}{0.16\textwidth}
-    %
-    %-------------------------------------------------------------------------------
-    \begin{pspicture*}(-8,-8)(8,8)
-      \rput(-6,6){%
-        %
-        \psset{xAxisLabel=,yAxisLabel=}
-        \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
-          \uput[-90](2.5,0){$x$}
-          \uput[180](0,2.5){$y$}
-
-          \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2.5}{2.5}{1.25}
-
-        \end{psgraph}}
-      %
-      \rput(-7,7){d)}
-      %
-    \end{pspicture*}%
-    %-------------------------------------------------------------------------------
-    %
-  \end{minipage}%
-  \hfill\begin{minipage}{0.16\textwidth}
-    %
-    %-------------------------------------------------------------------------------
-    \begin{pspicture*}(-8,-8)(8,8)
-      \rput(-6,6){%
-        %
-        \psset{xAxisLabel=,yAxisLabel=}
-        \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
-          \uput[-90](2.5,0){$x$}
-          \uput[180](0,2.5){$y$}
-
-          \psline[algebraic,linewidth=1.5pt,linecolor=black!60](1.25,-2.5)(1.25,2.5)
-
-        \end{psgraph}}
-      %
-      \rput(-7,7){e)}
-      %
-    \end{pspicture*}%
-    %-------------------------------------------------------------------------------
-    %
-  \end{minipage}\newline
-
-  \begin{solution}
-    \quad a), c) und d)
-  \end{solution}
-
-  %################################################################################
-  \question %4
-  %################################################################################
-  Die allgemeine Zuordnungsvorschrift einer linearen Funktion lautet $f(x)=mx+b$. Beschreibe die Bedeutung der Parameter $m$ und $b$.
-
-  \begin{solution}
-    Der Parameter $m$ beschreibt das Steigungsverhalten der linearen Funktion. Für $m > 0$ steigt die Gerade, für $m<0$ fällt sie. Für $m=0$ ergibt sich eine Parallele zur $x$-Achse. Die Steigung kann über das Steigungsdreieck veranschaulicht werden:
-
-    \hspace{15mm}\begin{minipage}{0.3\textwidth}
-      \psset{xunit=9mm,yunit=9mm}
-      %      \begin{center}
-      \begin{pspicture*}(-1,-1)(5,4.5)
-        \psaxes[labelFontSize=\scriptstyle,labels=none,ticks=none]{->}(0,0)(-0.5,-0.5)(4,4)[$x$,-90][$y$,180]
-
-        \psplot[plotpoints=200]{-0.5}{3.5}{x}
-
-        \psline(1,1)(3,1)
-        \rput(2,0.7){$\Delta x$}
-
-        \psline(3,1)(3,3)
-        \rput(3.4,2){$\Delta y$}
-
-        \psdot[dotstyle=+,dotsize=8pt](1,1)
-        \rput(0.7,1.5){$(x_1|y_1)$}
-
-        \psdot[dotstyle=+,dotsize=8pt](3,3)
-        \rput(2.7,3.5){$(x_2|y_2)$}
-
-      \end{pspicture*}
-      %      \end{center}
-    \end{minipage}
-    \begin{minipage}{0.3\textwidth}
-      \begin{align*}
-        m & =\frac{\Delta y}{\Delta x} \\[0.3cm]
-          & =\frac{y_2-y_1}{x_2-x_1}
-      \end{align*}
-    \end{minipage}
-
-    Die Steigung einer linearen Funktion ist an jeder Stelle gleich.\newline
-
-    $b$ entspricht dem Schnittpunkt der Geraden mit der $y$-Achse.
-
-  \end{solution}
-  %################################################################################
-  \question %5
-  %################################################################################
-  Optional: Wie lauten die Zuordnungsvorschriften der im Folgenden abgebildeten linearen Funktionen?\newline
-  %################################################################################
-
-  \begin{minipage}{0.3\textwidth}
-    %
-    %-------------------------------------------------------------------------------
-    \begin{pspicture*}(-13,-12)(13,13)
-      \rput(-10,10){%
-        %
-        \psset{xAxisLabel=,yAxisLabel=}
-        \begin{psgraph}[axesstyle=none,labels=none,ticks=none](0,0)(-5,-5)(5,5){0.8\textwidth}{0.8\textwidth}
-
-          \multido{\ra=-4+1}{9}{%
-            \multido{\rb=-4+1}{9}{%
-              \psline[linecolor=black!15](\ra,-4)(\ra,4)
-              \psline[linecolor=black!15](-4,\rb)(4,\rb)
-            }}
-
-          \rput(0,0){%
-            %
-            \begin{psgraph}[axesstyle=axes,arrows=->,Dx=2,Dy=2,labels=all,ticks=all](0,0)(-5,-5)(5,5){0.8\textwidth}{0.8\textwidth}
-              %
-              \uput[-90](5,0){$x$}
-              \uput[180](0,5){$y$}
-
-              \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-3}{4}{x-1}
-
-            \end{psgraph}}
-          %
-        \end{psgraph}}
-      %
-      \rput(-11,11){a)}
-      %
-    \end{pspicture*}%
-    %-------------------------------------------------------------------------------
-    %
-  \end{minipage}%
-  \hfill\begin{minipage}{0.3\textwidth}
-    %
-    %-------------------------------------------------------------------------------
-    \begin{pspicture*}(-13,-12)(13,13)
-      \rput(-10,10){%
-        %
-        \psset{xAxisLabel=,yAxisLabel=}
-        \begin{psgraph}[axesstyle=none,labels=none,ticks=none](0,0)(-5,-5)(5,5){0.8\textwidth}{0.8\textwidth}
-
-          \multido{\ra=-4+1}{9}{%
-            \multido{\rb=-4+1}{9}{%
-              \psline[linecolor=black!15](\ra,-4)(\ra,4)
-              \psline[linecolor=black!15](-4,\rb)(4,\rb)
-            }}
-
-          \rput(0,0){%
-            %
-            \begin{psgraph}[axesstyle=axes,arrows=->,Dx=2,Dy=2,labels=all,ticks=all](0,0)(-5,-5)(5,5){0.8\textwidth}{0.8\textwidth}
-              %
-              \uput[-90](5,0){$x$}
-              \uput[180](0,5){$y$}
-
-              \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-0.5}{3.5}{-2*x+3}
-
-            \end{psgraph}}
-          %
-        \end{psgraph}}
-      %
-      \rput(-11,11){b)}
-      %
-    \end{pspicture*}%
-    %-------------------------------------------------------------------------------
-    %
-  \end{minipage}%
-  \hfill\begin{minipage}{0.3\textwidth}
-    %
-    %-------------------------------------------------------------------------------
-    \begin{pspicture*}(-13,-12)(13,13)
-      \rput(-10,10){%
-        %
-        \psset{xAxisLabel=,yAxisLabel=}
-        \begin{psgraph}[axesstyle=none,labels=none,ticks=none](0,0)(-5,-5)(5,5){0.8\textwidth}{0.8\textwidth}
-
-          \multido{\ra=-4+1}{9}{%
-            \multido{\rb=-4+1}{9}{%
-              \psline[linecolor=black!15](\ra,-4)(\ra,4)
-              \psline[linecolor=black!15](-4,\rb)(4,\rb)
-            }}
-
-          \rput(0,0){%
-            %
-            \begin{psgraph}[axesstyle=axes,arrows=->,Dx=2,Dy=2,labels=all,ticks=all](0,0)(-5,-5)(5,5){0.8\textwidth}{0.8\textwidth}
-              %
-              \uput[-90](5,0){$x$}
-              \uput[180](0,5){$y$}
-
-              \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-4}{4}{2/3*x}
-
-            \end{psgraph}}
-          %
-        \end{psgraph}}
-      %
-      \rput(-11,11){c)}
-      %
-    \end{pspicture*}%
-    %-------------------------------------------------------------------------------
-    %
-  \end{minipage}%
-
-
-  \begin{solution}
-    \quad\begin{minipage}{0.3\textwidth}
-      a) $\displaystyle y=x-1$
-    \end{minipage}%
-    \hfill\begin{minipage}{0.3\textwidth}
-      b) $\displaystyle y=-2x+3$
-    \end{minipage}%
-    \hfill\begin{minipage}{0.3\textwidth}
-      c) $\displaystyle y=\frac{2}{3}x$
-    \end{minipage}
-  \end{solution}
-
-  % %################################################################################
-  % \question %6
-  % Zeichne die Graphen der folgenden Funktionen in ein gemeinsames Koordinatensystem (von Hand):\newline
-  % %################################################################################
-
-  % \hspace{1cm}\begin{minipage}{5cm}
-  %   \begin{enumerate}[label=\alph*)]
-  %     \item $f(x)=3x-4$
-  %     \item $f(x)=-x+2$
-  %   \end{enumerate}
-  % \end{minipage}
-  % \begin{minipage}{5cm}
-  %   \begin{enumerate}[label=\alph*)]
-  %     \setcounter{enumi}{2}
-  %     \item $f(x)=0{,}5x$
-  %     \item $\displaystyle f(x)=-\frac{2}{3}x+5$
-  %   \end{enumerate}
-  % \end{minipage}
-  % \begin{minipage}{5cm}
-  %   \begin{enumerate}[label=\alph*)]
-  %     \setcounter{enumi}{4}
-  %     \item $\displaystyle f(x)=\frac{3}{7}x-3$
-  %     \item $\displaystyle f(x)=-\frac{11}{4}x+6$
-  %   \end{enumerate}
-  % \end{minipage}
-
-  % \begin{solution}
-  %   $\Rightarrow$ könnt Ihr selbst mit Geogebra überprüfen. Die Strategie zum Zeichnen ist immer die gleiche: Zuerst wird der Schnittpunkt mit der $y$-Achse markiert. Von diesem aus wird die Steigung abgetragen. Dabei rechnet man die Steigung immer in einen Bruch um (bei ganzen Zahlen ist der Nenner einfach 1) und geht dann zuerst den Nenner (das ist unten) nach rechts zur Seite (zählen in Kästchen oder Zentimeter) und dann den Zähler (also oben) hoch, wenn die Steigung positiv ist und runter, wenn sie negativ ist. Dort angekommen markiert man einen zweiten Punkt. Beide Punkte verbinden $\Rightarrow$ fertig :-)
-  % \end{solution}
-  % %################################################################################
-  % \question %7
-  % \textbf{Berechne} die Schnittwinkel der Geraden aus Aufgabe 6:\newline
-  % %################################################################################
-
-  % \hspace{1cm}\begin{minipage}{5cm}
-  %   \begin{enumerate}[label=\alph*)]
-  %     \item b) und c)
-  %   \end{enumerate}
-  % \end{minipage}
-  % \begin{minipage}{5cm}
-  %   \begin{enumerate}[label=\alph*)]
-  %     \setcounter{enumi}{1}
-  %     \item b) und d)
-  %   \end{enumerate}
-  % \end{minipage}
-  % \begin{minipage}{5cm}
-  %   \begin{enumerate}[label=\alph*)]
-  %     \setcounter{enumi}{2}
-  %     \item a) und c)
-  %   \end{enumerate}
-  % \end{minipage}
-
-  % \begin{solution}
-  %   Hier betrachten wir kurz allgemein Winkel zwischen zwei Funktionen. Es gibt drei Fälle, wie Geraden zueinander liegen können: Beide Steigungen sind positiv, beide Steigungen sind negativ, eine Steigung ist positiv, eine negativ. Die Berechnung der Schnittwinkel kann man in den folgenden Graphiken nachvollziehen:
-
-  %   \begin{tabular}{ccc}
-
-  %     $m_1>0,~m_2>0$
-  %      &
-  %     $m_1<0,~m_2<0$
-  %      &
-  %     $m_1>0,~m_2<0$             \\
-
-  %     \psset{xunit=1cm,yunit=1cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
-  %     \begin{pspicture*}(-1.5,-1.2)(3.5,3.5)
-  %       \psaxes[labelFontSize=\scriptstyle,labels=none,ticks=none]{->}(0,0)(-0.5,-1)(3,3)[$x$,-90][$y$,180]
-
-  %       \pswedge[fillstyle=solid,fillcolor=black!15,linecolor=black!15](0.66666,0.833333){7}{0}{26.56}
-
-  %       \pswedge[fillstyle=solid,fillcolor=black!40,linecolor=black!40](0.66666,0.833333){4}{0}{63.43}
-
-  %       \psarc(0.66666,0.833333){8.5}{26.56}{63.43}
-
-  %       \psplot[algebraic]{-0.25}{2.14}{0.5*x+0.5}
-  %       \psplot[algebraic]{-0.25}{1.5}{2*x-0.5}
-
-  %       \psline[linestyle=dashed](-0.5,0.833333)(3,0.833333)
-
-  %       \rput(1.5,1.5){$\alpha_1$}
-  %       \psline(1.35,1.4)(1,1.1)
-
-  %       \rput(2.3,1.1){$\alpha_2$}
-  %       \psline(2.05,1.15)(1.7,1.05)
-
-  %       \rput(1.8,2.1){$\varphi$}
-
-  %     \end{pspicture*}
-
-  %      &
-
-  %     \psset{xunit=1cm,yunit=1cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
-  %     \begin{pspicture*}(-1.5,-1.2)(3.5,3.5)
-  %       \psaxes[labelFontSize=\scriptstyle,labels=none,ticks=none]{->}(0,0)(-0.5,-1)(3,3)[$x$,-90][$y$,180]
-
-  %       \pswedge[fillstyle=solid,fillcolor=black!15,linecolor=black!15](0.66666,0.833333){7}{-26.56}{0}
-
-  %       \pswedge[fillstyle=solid,fillcolor=black!40,linecolor=black!40](0.66666,0.833333){4}{-63.43}{0}
-
-  %       \psarc(0.66666,0.833333){8.5}{-63.43}{-26.56}
-
-  %       \psplot[algebraic]{-0.1}{2.14}{-0.5*x+1.167777}
-  %       \psplot[algebraic]{-0.1}{1.5}{-2*x+2.167777}
-
-  %       \psline[linestyle=dashed](-0.5,0.833333)(3,0.833333)
-
-  %       \rput(1.6,0.16666){$\alpha_1$}
-  %       \psline(1.35,0.26666)(1,0.56666)
-
-  %       \rput(2.3,0.46666){$\alpha_2$}
-  %       \psline(2.05,0.51666)(1.7,0.61666)
-
-  %       \rput(1.8,-0.43333){$\varphi$}
-
-  %     \end{pspicture*}
-
-  %      &
-
-  %     \psset{xunit=1cm,yunit=1cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
-  %     \begin{pspicture*}(-1.5,-1.2)(3.5,3.5)
-  %       \psaxes[labelFontSize=\scriptstyle,labels=none,ticks=none]{->}(0,0)(-0.5,-1)(3,3)[$x$,-90][$y$,180]
-
-  %       \pswedge[fillstyle=solid,fillcolor=black!15,linecolor=black!15](0.66666,0.833333){7}{-26.56}{0}
-
-  %       \pswedge[fillstyle=solid,fillcolor=black!40,linecolor=black!40](0.66666,0.833333){4}{0}{63.43}
-
-  %       \psarc(0.66666,0.833333){9.5}{-26.56}{-18}
-
-  %       \psarc(0.66666,0.833333){9.5}{-6}{63.43}
-
-  %       \psplot[algebraic]{-0.25}{2.5}{-0.5*x+1.167777}
-  %       \psplot[algebraic]{-0.25}{1.5}{2*x-0.5}
-
-  %       \psline[linestyle=dashed](-0.5,0.833333)(3,0.833333)
-
-  %       \rput(1.5,1.5){$\alpha_1$}
-  %       \psline(1.35,1.4)(1,1.1)
-
-  %       \rput(2.3,0.46666){$\alpha_2$}
-  %       \psline(2.05,0.51666)(1.7,0.61666)
-
-  %       \rput(2.5,1.3){$\varphi$}
-
-  %     \end{pspicture*} \\
-
-  %     $\varphi=\alpha_1-\alpha_2$
-
-  %      &
-
-  %     $\varphi=\alpha_1-\alpha_2$
-
-  %      &
-
-  %     $\varphi=\alpha_1+\alpha_2$
-  %   \end{tabular}
-
-  %   \vspace{\baselineskip}
-
-  %   Dabei betrachten wir immer die Beträge der Winkel, die der Taschenrechner ausgibt. Der Winkel zwischen zwei Funktionen wird oft mit dem griechischen Buchstaben $\varphi$ ("`Phi"') bezeichnet, Ihr könnt natürlich auch jeden anderen griechischen Buchstaben verwenden.\newline
-
-  %   Grundsätzlich könnt Ihr Euch also merken, dass man die einzelnen Winkel subtrahiert, wenn die Vorzeichen der Steigungen gleich sind und addiert, wenn die Vorzeichen verschieden sind. Außerdem gibt es ja beim Schnitt von zwei Geraden immer zwei Winkel, die sich zu 180\textdegree~ergänzen. Als Schnittwinkel wird immer der kleinere von beiden definiert. Sollte also der errechnete Winkel größer sein als 90\textdegree, dann müsst Ihr ihn noch von 180\textdegree~subtrahieren, um den eigentlichen Schnittwinkel zu erhalten.\newline
-
-  %   \begin{minipage}{0.3\textwidth}
-  %     \setlength{\jot}{15pt}
-  %     \begin{enumerate}[label=\alph*)]
-  %       \item b) und c)
-  %             \begin{align*}
-  %               m_{\rm{b}} & =-1\Rightarrow \alpha_{\rm{b}}=-45^\circ        \\
-  %               m_{\rm{c}} & =0{,}5\Rightarrow \alpha_{\rm{c}}=26{,}6^\circ  \\
-  %               \varphi    & =|\alpha_{\rm{b}}|+\alpha_{\rm{c}}=71{,}6^\circ
-  %             \end{align*}
-  %     \end{enumerate}
-  %   \end{minipage}
-  %   \hfill\begin{minipage}{0.3\textwidth}
-  %     \setlength{\jot}{15pt}
-  %     \begin{enumerate}[label=\alph*)]
-  %       \setcounter{enumi}{1}
-  %       \item b) und d)
-  %             \begin{align*}
-  %               m_{\rm{b}} & =-1\Rightarrow \alpha_{\rm{b}}=-45^\circ               \\
-  %               m_{\rm{d}} & =-\frac{2}{3}\Rightarrow \alpha_{\rm{c}}=-33{,}7^\circ \\
-  %               \varphi    & =|\alpha_{\rm{b}}|-|\alpha_{\rm{d}}|=11{,}3^\circ
-  %             \end{align*}
-  %     \end{enumerate}
-  %   \end{minipage}
-  %   \hfill\begin{minipage}{0.3\textwidth}
-  %     \setlength{\jot}{15pt}
-  %     \begin{enumerate}[label=\alph*)]
-  %       \setcounter{enumi}{2}
-  %       \item a) und c)
-  %             \begin{align*}
-  %               m_{\rm{a}} & =3\Rightarrow \alpha_{\rm{a}}=71{,}6^\circ     \\
-  %               m_{\rm{c}} & =0{,}5\Rightarrow \alpha_{\rm{c}}=26{,}6^\circ \\
-  %               \varphi    & =|\alpha_{\rm{b}}|-|\alpha_{\rm{d}}|=45^\circ
-  %             \end{align*}
-  %     \end{enumerate}
-  %   \end{minipage}
-
-  % \end{solution}
-  % %################################################################################
-  % \question %8
-  % Bestimme \textbf{rechnerisch} jeweils die Zuordnungsvorschrift der Funktion, die die folgenden Bedingungen erfüllt:\newline
-  % %################################################################################
-
-  % \hspace{1cm}\begin{minipage}{0.9\textwidth}
-  %   \begin{enumerate}[label=\alph*)]
-  %     \item geht durch A$(-1\mid-2)$ und B$(3\mid6)$
-  %     \item geht durch Q$(2\mid5)$ und hat die Steigung $m=\frac{3}{4}$
-  %     \item schneidet die $y$-Achse bei $y=7$ und steht senkrecht auf $g(x)=5x+2$
-  %     \item schneidet die Koordinatenachsen bei $x=-3$ und $y=-1$
-  %     \item verläuft parallel zu $h(x)=2x$ und geht durch P$(-3\mid4)$
-  %     \item ** steht senkrecht auf $h(x)=\frac{1}{3}x+2$ und geht durch den Schnittpunkt von $i(x)=x-2$ und $k(x)=-x+6$
-  %     \item ** schneidet die $x$-Achse bei N$(8\mid0)$ unter dem Winkel $\alpha=71{,}6$\textdegree
-  %   \end{enumerate}
-  % \end{minipage}
-
-  % \begin{solution}
-  % \end{solution}
-  % %################################################################################
-  % \question %9
-  % Welche Bedingung müssen die beiden Steigungen $m_1$ und $m_2$ erfüllen, damit die Geraden $g_1$ und $g_2$ mit $g_1: y=m_1\cdot x+b_1$ und $g_2: y=m_2\cdot x+b_2$ parallel verlaufen?\newline
-  % %################################################################################
-  % \begin{solution}
-  %   Zwei Geraden $g_1$ und $g_2$ verlaufen parallel, falls ihre Steigungen gleich sind, falls also $m_1=m_2$ gilt.
-
-  % \end{solution}
-  % %################################################################################
-  % \question %10
-  % Welche Bedingung müssen die beiden Steigungen $m_1$ und $m_2$ erfüllen, damit die Geraden $g_1$ und $g_2$ mit $g_1: y=m_1\cdot x+b_1$ und $g_2: y=m_2\cdot x+b_2$ orthogonal verlaufen?\newline
-  % %################################################################################
-  % \begin{solution}
-  %   Zwei Geraden $g_1$ und $g_2$ verlaufen orthogonal, falls das Produkt ihrer beiden Steigungen $-1$ ergibt, falls also $m_1\cdot m_2=-1$ gilt.
-
-  % \end{solution}
-
-  % %################################################################################
-  % \question %11
-  % Bei welchen der im Folgenden abgebildeten Zuordnungen handelt es sich um Graphen einer quadratischen Funktion?\newline
-  % %################################################################################
-
-  % \begin{minipage}{0.16\textwidth}
-  %   %
-  %   %-------------------------------------------------------------------------------
-  %   \begin{pspicture*}(-8,-8)(8,8)
-  %     \rput(-6,6){%
-  %       %
-  %       \psset{xAxisLabel=,yAxisLabel=}
-  %       \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-8.5)(2.5,8.5){0.9\textwidth}{0.9\textwidth}
-  %         \uput[-90](2.5,0){$x$}
-  %         \uput[180](0,8.5){$y$}
-
-  %         \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{3.25*x^2-6}
-
-  %       \end{psgraph}}
-  %     %
-  %     \rput(-7,7){a)}
-  %     %
-  %   \end{pspicture*}%
-  %   %-------------------------------------------------------------------------------
-  %   %
-  % \end{minipage}%
-  % \hfill\begin{minipage}{0.16\textwidth}
-  %   %
-  %   %-------------------------------------------------------------------------------
-  %   \begin{pspicture*}(-8,-8)(8,8)
-  %     \rput(-6,6){%
-  %       %
-  %       \psset{xAxisLabel=,yAxisLabel=}
-  %       \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
-  %         \uput[-90](2.5,0){$x$}
-  %         \uput[180](0,2.5){$y$}
-
-  %         \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{-x^2+1.75}
-
-  %       \end{psgraph}}
-  %     %
-  %     \rput(-7,7){b)}
-  %     %
-  %   \end{pspicture*}%
-  %   %-------------------------------------------------------------------------------
-  %   %
-  % \end{minipage}%
-  % \hfill\begin{minipage}{0.16\textwidth}
-  %   %
-  %   %-------------------------------------------------------------------------------
-  %   \begin{pspicture*}(-8,-8)(8,8)
-  %     \rput(-6,6){%
-  %       %
-  %       \psset{xAxisLabel=,yAxisLabel=}
-  %       \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
-  %         \uput[-90](2.5,0){$x$}
-  %         \uput[180](0,2.5){$y$}
-
-  %         \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{(x+2)^(1/2)}
-  %         \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{-(x+2)^(1/2)}
-
-  %       \end{psgraph}}
-  %     %
-  %     \rput(-7,7){c)}
-  %     %
-  %   \end{pspicture*}%
-  %   %-------------------------------------------------------------------------------
-  %   %
-  % \end{minipage}%
-  % \hfill\begin{minipage}{0.16\textwidth}
-  %   %
-  %   %-------------------------------------------------------------------------------
-  %   \begin{pspicture*}(-8,-8)(8,8)
-  %     \rput(-6,6){%
-  %       %
-  %       \psset{xAxisLabel=,yAxisLabel=}
-  %       \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
-  %         \uput[-90](2.5,0){$x$}
-  %         \uput[180](0,2.5){$y$}
-
-  %         \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-1.9}{1.35}{(x+1)^3-2*(x+1)^2}
-
-  %       \end{psgraph}}
-  %     %
-  %     \rput(-7,7){d)}
-  %     %
-  %   \end{pspicture*}%
-  %   %-------------------------------------------------------------------------------
-  %   %
-  % \end{minipage}%
-  % \hfill\begin{minipage}{0.16\textwidth}
-  %   %
-  %   %-------------------------------------------------------------------------------
-  %   \begin{pspicture*}(-8,-8)(8,8)
-  %     \rput(-6,6){%
-  %       %
-  %       \psset{xAxisLabel=,yAxisLabel=}
-  %       \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
-  %         \uput[-90](2.5,0){$x$}
-  %         \uput[180](0,2.5){$y$}
-
-  %         \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{0.25*x^4-2}
-
-  %       \end{psgraph}}
-  %     %
-  %     \rput(-7,7){e)}
-  %     %
-  %   \end{pspicture*}%
-  %   %-------------------------------------------------------------------------------
-  %   %
-  % \end{minipage}\newline
-  % \begin{solution}
-  %   \quad a) und b)
-  % \end{solution}
-
-  % %################################################################################
-  % \question %12
-  % Beschreibe den Einfluss einer Änderung der Werte von $a$, $b$ und $c$ in $y=a\cdot\left(x-b\right)^2+c$ auf den Graphen der Funktion.
-  % %################################################################################
-  % \begin{solution}
-  %   Beschreibe den Einfluss einer Änderung der Werte von $a$, $b$ und $c$ in $y=a\cdot\left(x-b\right)^2+c$ auf den Graphen der Funktion.
-
-  % \end{solution}
-  % %################################################################################
-  % \question %13
-  % Wie lauten die Zuordnungsvorschriften der im Folgenden abgebildeten quadratischen Funktionen?\newline
-  % %################################################################################
-
-  % \begin{minipage}{0.3\textwidth}
-  %   %
-  %   %-------------------------------------------------------------------------------
-  %   \begin{pspicture*}(-15,-15)(15,15)
-  %     \rput(-11.125,11.125){%
-  %       %
-  %       \psset{xAxisLabel=,yAxisLabel=}
-  %       \begin{psgraph}[axesstyle=none,labels=none,ticks=none](0,0)(-5,-3)(5,7){0.9\textwidth}{0.9\textwidth}
-
-  %         \multido{\ra=-4+1}{9}{%
-  %           \multido{\rb=-2+1}{9}{%
-  %             \psline[linecolor=black!15](\ra,-2)(\ra,6)
-  %             \psline[linecolor=black!15](-4,\rb)(4,\rb)
-  %           }}
-
-  %         \rput(0,2){%
-  %           %
-  %           \begin{psgraph}[axesstyle=axes,arrows=->,Dx=2,Dy=2,labels=all,ticks=all](0,0)(-5,-3)(5,7){0.9\textwidth}{0.9\textwidth}
-  %             %
-  %             \uput[-90](5,0){$x$}
-  %             \uput[180](0,7){$y$}
-
-  %             \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2.45}{2.45}{x^2}
-
-  %           \end{psgraph}}
-  %         %
-  %       \end{psgraph}
-  %     }
-  %     %
-  %     \rput(-13.125,13.125){a)}
-  %     %
-  %   \end{pspicture*}%
-  %   %-------------------------------------------------------------------------------
-  %   %
-  % \end{minipage}%
-  % \hfill\begin{minipage}{0.3\textwidth}
-  %   %
-  %   %-------------------------------------------------------------------------------
-  %   \begin{pspicture*}(-15,-15)(15,15)
-  %     \rput(-11.125,11.125){%
-  %       %
-  %       \psset{xAxisLabel=,yAxisLabel=}
-  %       \begin{psgraph}[axesstyle=none,labels=none,ticks=none](0,0)(-3,-3)(7,7){0.9\textwidth}{0.9\textwidth}
-
-  %         \multido{\ra=-2+1}{9}{%
-  %           \multido{\rb=-2+1}{9}{%
-  %             \psline[linecolor=black!15](\ra,-2)(\ra,6)
-  %             \psline[linecolor=black!15](-2,\rb)(6,\rb)
-  %           }}
-
-  %         \rput(2,2){%
-  %           %
-  %           \begin{psgraph}[axesstyle=axes,arrows=->,Dx=2,Dy=2,labels=all,ticks=all](0,0)(-3,-3)(7,7){0.9\textwidth}{0.9\textwidth}
-  %             %
-  %             \uput[-90](7,0){$x$}
-  %             \uput[180](0,7){$y$}
-
-  %             \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{2}{6}{(x-4)^2+2}
-
-  %           \end{psgraph}}
-  %         %
-  %       \end{psgraph}
-  %     }
-  %     %
-  %     \rput(-13.125,13.125){b)}
-  %     %
-  %   \end{pspicture*}%
-  %   %-------------------------------------------------------------------------------
-  %   %
-  % \end{minipage}%
-  % \hfill\begin{minipage}{0.3\textwidth}
-  %   %
-  %   %-------------------------------------------------------------------------------
-  %   \begin{pspicture*}(-15,-15)(15,15)
-  %     \rput(-11.125,11.125){%
-  %       %
-  %       \psset{xAxisLabel=,yAxisLabel=}
-  %       \begin{psgraph}[axesstyle=none,labels=none,ticks=none](0,0)(-7,-3)(3,7){0.9\textwidth}{0.9\textwidth}
-
-  %         \multido{\ra=-6+1}{9}{%
-  %           \multido{\rb=-2+1}{9}{%
-  %             \psline[linecolor=black!15](\ra,-2)(\ra,6)
-  %             \psline[linecolor=black!15](-6,\rb)(2,\rb)
-  %           }}
-
-  %         \rput(-2,2){%
-  %           %
-  %           \begin{psgraph}[axesstyle=axes,arrows=->,Dx=2,Dy=2,labels=all,ticks=all](0,0)(-7,-3)(3,7){0.9\textwidth}{0.9\textwidth}
-  %             %
-  %             \uput[-90](3,0){$x$}
-  %             \uput[180](0,7){$y$}
-
-  %             \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-5.74}{1.74}{-0.5*(x+2)^2+5}
-
-  %           \end{psgraph}}
-  %         %
-  %       \end{psgraph}
-  %     }
-  %     %
-  %     \rput(-13.125,13.125){c)}
-  %     %
-  %   \end{pspicture*}%
-  %   %-------------------------------------------------------------------------------
-  %   %
-  % \end{minipage}%
-  % \begin{solution}
-  %   \quad\begin{minipage}{0.3\textwidth}
-  %     a) $\displaystyle y=x^2$
-  %   \end{minipage}%
-  %   \hfill\begin{minipage}{0.3\textwidth}
-  %     b) $\displaystyle y=\left(x-4\right)^2+2$
-  %   \end{minipage}%
-  %   \hfill\begin{minipage}{0.3\textwidth}
-  %     c) $\displaystyle y=-\frac{1}{2}\cdot\left(x+2\right)^2+5$
-  %   \end{minipage}
-  % \end{solution}
-  % %################################################################################
-  % \question %14
-  % Gib für die im Folgenden angegebenen Funktionen jeweils die Koordinaten des Scheitelpunktes an und zeichne den entsprechenden Funktionsgraphen.\newline
-  % %################################################################################
-
-  % \hspace{1cm}\begin{minipage}{5.5cm}
-  %   \begin{enumerate}[label=\alph*)]
-  %     \item $f(x)=(x-1)^2-2$
-  %     \item $f(x)=2\cdot(x+2)^2-4$
-  %   \end{enumerate}
-  % \end{minipage}
-  % \begin{minipage}{5.5cm}
-  %   \begin{enumerate}[label=\alph*)]
-  %     \setcounter{enumi}{2}
-  %     \item $f(x)=-x^2+3$
-  %     \item $f(x)=0{,}5\cdot(x-3)^2-1$
-  %   \end{enumerate}
-  % \end{minipage}
-
-  % \begin{solution}
-  %   $\Rightarrow$ auch hier könnt Ihr Eure Zeichnungen mit Geogebra überprüfen. Zum Zeichnen von quadratischen Funktionen wird immer erst der Scheitelpunkt der Funktion markiert. Von diesem Scheitelpunkt aus geht man eins nach rechts und $a$ nach oben für $|a|>0$, $a$ nach unten für $|a|<0$ und markiert die Stelle. Anschließend geht man vom Scheitelpunkt aus eins nach links und ebenfalls wieder den Wert von $a$ nach oben/unten. Mit Hilfe dieser drei Punkte kann der Graph skizziert werden.
-
-  % \end{solution}
-  % %################################################################################
-  % \question %15
-  % Welche quadratische Funktion erfüllt jeweils die beschriebenen Eigenschaften?\newline
-  % %################################################################################
-
-  % \hspace{1cm}\begin{minipage}{0.9\textwidth}
-  %   \begin{enumerate}[label=\alph*)]
-  %     \item Normalparabel um 4 nach rechts verschoben
-  %     \item nach unten geöffnete Parabel mit Scheitelpunkt S$(-2\mid3)$, mit Faktor 3 in $y$-Richtung gestreckt
-  %     \item ** Scheitelpunkt bei S$(4\mid5)$, geht durch A$(1\mid23)$
-  %   \end{enumerate}
-  % \end{minipage}
-
-  % \begin{solution}
-  %   \begin{enumerate}[label=\alph*)]
-  %     \item Normalparabel um 4 nach rechts verschoben
-  %           %
-  %           \begin{equation*}
-  %             f(x)=(x-4)^2
-  %           \end{equation*}
-
-  %     \item nach unten geöffnete Parabel mit Scheitelpunkt S$(-2\mid3)$, mit Faktor 3 in $y$-Richtung gestreckt
-  %           %
-  %           \begin{equation*}
-  %             f(x)=-3\cdot(x+2)^2+3
-  %           \end{equation*}
-  %     \item ** Scheitelpunkt bei S$(4\mid5)$, geht durch A$(1\mid23)$
-
-
-  %           \begin{align*}
-  %             f(x) & =a\cdot(x-4)^2+5             \\[3mm]
-  %             23   & =a\cdot(1-4)^2+5             \\
-  %             18   & =9a\quad\Rightarrow\quad a=2 \\[3mm]
-  %             f(x) & =2\cdot(x-4)^2+5
-  %           \end{align*}
-
-  %   \end{enumerate}
-  % \end{solution}
+	\printanswers
+	\question %1
+	Bei welchen der im Folgenden abgebildeten Zuordnungen handelt es sich \textsc{nicht} um Funktionen?\newline
+	%################################################################################
+
+	\begin{minipage}{0.16\textwidth}
+		\begin{pspicture*}(-8,-8)(8,8)
+			\rput(-6,6){%
+				%
+				\psset{xAxisLabel=,yAxisLabel=}
+				\begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-8.5)(2.5,8.5){0.9\textwidth}{0.9\textwidth}
+					\uput[-90](2.5,0){$x$}
+					\uput[180](0,8.5){$y$}
+
+					\psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{x^3}
+
+				\end{psgraph}}
+			%
+			\rput(-7,7){a)}
+			%
+		\end{pspicture*}%
+		%-------------------------------------------------------------------------------
+		%
+	\end{minipage}%
+	\hfill\begin{minipage}{0.16\textwidth}
+		%
+		%-------------------------------------------------------------------------------
+		\begin{pspicture*}(-8,-8)(8,8)
+			\rput(-6,6){%
+				%
+				\psset{xAxisLabel=,yAxisLabel=}
+				\begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
+					\uput[-90](2.5,0){$x$}
+					\uput[180](0,2.5){$y$}
+
+					\pscircle[algebraic,linewidth=1.5pt,linecolor=black!60](0,0){1.75}
+
+				\end{psgraph}}
+			%
+			\rput(-7,7){b)}
+			%
+		\end{pspicture*}%
+		%-------------------------------------------------------------------------------
+		%
+	\end{minipage}%
+	\hfill\begin{minipage}{0.16\textwidth}
+		%
+		%-------------------------------------------------------------------------------
+		\begin{pspicture*}(-8,-8)(8,8)
+			\rput(-6,6){%
+				%
+				\psset{xAxisLabel=,yAxisLabel=}
+				\begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
+					\uput[-90](2.5,0){$x$}
+					\uput[180](0,2.5){$y$}
+
+					\psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{(x+2)^(1/2)}
+					\psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{-(x+2)^(1/2)}
+
+				\end{psgraph}}
+			%
+			\rput(-7,7){c)}
+			%
+		\end{pspicture*}%
+		%-------------------------------------------------------------------------------
+		%
+	\end{minipage}%
+	\hfill\begin{minipage}{0.16\textwidth}
+		%
+		%-------------------------------------------------------------------------------
+		\begin{pspicture*}(-8,-8)(8,8)
+			\rput(-6,6){%
+				%
+				\psset{xAxisLabel=,yAxisLabel=}
+				\begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
+					\uput[-90](2.5,0){$x$}
+					\uput[180](0,2.5){$y$}
+
+					\psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2.5}{2.5}{1.25}
+
+				\end{psgraph}}
+			%
+			\rput(-7,7){d)}
+			%
+		\end{pspicture*}%
+		%-------------------------------------------------------------------------------
+		%
+	\end{minipage}%
+	\hfill\begin{minipage}{0.16\textwidth}
+		%
+		%-------------------------------------------------------------------------------
+		\begin{pspicture*}(-8,-8)(8,8)
+			\rput(-6,6){%
+				%
+				\psset{xAxisLabel=,yAxisLabel=}
+				\begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
+					\uput[-90](2.5,0){$x$}
+					\uput[180](0,2.5){$y$}
+
+					\psline[algebraic,linewidth=1.5pt,linecolor=black!60](1.25,-2.5)(1.25,2.5)
+
+				\end{psgraph}}
+			%
+			\rput(-7,7){e)}
+			%
+		\end{pspicture*}%
+		%-------------------------------------------------------------------------------
+		%
+	\end{minipage}
+	\begin{solution} Bei einer Zuordnung handelt es sich dann um eine Funktion, falls jedem Wert aus der Definitionsmenge der Funktion (jedem $x$-Wert) \textsc{genau ein} Wert aus der Wertemenge der Funktion (ein $y$-Wert) zugeordnet wird. Entsprechend handelt es sich bei b), c) und e) nicht um Funktionen.
+
+	\end{solution}
+	%################################################################################
+	\question %2
+	Formuliere in Fachsprache:
+	%################################################################################
+
+	\begin{enumerate}
+		\item \enquote{der Funktionswert der Funktion $f$ an der Stelle $x=2$}
+		\item \enquote{der Funktionswert der Funktion $g$ an der Stelle $x=x_0$}
+	\end{enumerate}
+
+	\begin{solution}
+		\quad\begin{minipage}{0.3\textwidth}
+			a) $\displaystyle f\left(2\right)$
+		\end{minipage}%
+		\hfill\begin{minipage}{0.3\textwidth}
+			b) $\displaystyle g\left(x_0\right)$
+		\end{minipage}%
+		\hfill\begin{minipage}{0.3\textwidth}
+			\textcolor{white}{text}
+		\end{minipage}
+	\end{solution}
+
+	%################################################################################
+	\question %3
+	Bei welchen der im Folgenden abgebildeten Zuordnungen handelt es sich um Graphen einer linearen Funktion?\newline
+	%################################################################################
+
+	\begin{minipage}{0.16\textwidth}
+		%
+		%-------------------------------------------------------------------------------
+		\begin{pspicture*}(-8,-8)(8,8)
+			\rput(-6,6){%
+				%
+				\psset{xAxisLabel=,yAxisLabel=}
+				\begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-8.5)(2.5,8.5){0.9\textwidth}{0.9\textwidth}
+					\uput[-90](2.5,0){$x$}
+					\uput[180](0,8.5){$y$}
+
+					\psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{4*x}
+
+				\end{psgraph}}
+			%
+			\rput(-7,7){a)}
+			%
+		\end{pspicture*}%
+		%-------------------------------------------------------------------------------
+		%
+	\end{minipage}%
+	\hfill\begin{minipage}{0.16\textwidth}
+		%
+		%-------------------------------------------------------------------------------
+		\begin{pspicture*}(-8,-8)(8,8)
+			\rput(-6,6){%
+				%
+				\psset{xAxisLabel=,yAxisLabel=}
+				\begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-8.5)(2.5,8.5){0.9\textwidth}{0.9\textwidth}
+					\uput[-90](2.5,0){$x$}
+					\uput[180](0,8.5){$y$}
+
+					\psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{-x^3}
+
+				\end{psgraph}}
+			%
+			\rput(-7,7){b)}
+			%
+		\end{pspicture*}%
+		%-------------------------------------------------------------------------------
+		%
+	\end{minipage}%
+	\hfill\begin{minipage}{0.16\textwidth}
+		%
+		%-------------------------------------------------------------------------------
+		\begin{pspicture*}(-8,-8)(8,8)
+			\rput(-6,6){%
+				%
+				\psset{xAxisLabel=,yAxisLabel=}
+				\begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-1.5,-2.5)(3.5,2.5){0.9\textwidth}{0.9\textwidth}
+					\uput[-90](3.5,0){$x$}
+					\uput[180](0,2.5){$y$}
+
+					\psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-1}{3}{-x+1}
+
+				\end{psgraph}}
+			%
+			\rput(-7,7){c)}
+			%
+		\end{pspicture*}%
+		%-------------------------------------------------------------------------------
+		%
+	\end{minipage}%
+	\hfill\begin{minipage}{0.16\textwidth}
+		%
+		%-------------------------------------------------------------------------------
+		\begin{pspicture*}(-8,-8)(8,8)
+			\rput(-6,6){%
+				%
+				\psset{xAxisLabel=,yAxisLabel=}
+				\begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
+					\uput[-90](2.5,0){$x$}
+					\uput[180](0,2.5){$y$}
+
+					\psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2.5}{2.5}{1.25}
+
+				\end{psgraph}}
+			%
+			\rput(-7,7){d)}
+			%
+		\end{pspicture*}%
+		%-------------------------------------------------------------------------------
+		%
+	\end{minipage}%
+	\hfill\begin{minipage}{0.16\textwidth}
+		%
+		%-------------------------------------------------------------------------------
+		\begin{pspicture*}(-8,-8)(8,8)
+			\rput(-6,6){%
+				%
+				\psset{xAxisLabel=,yAxisLabel=}
+				\begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
+					\uput[-90](2.5,0){$x$}
+					\uput[180](0,2.5){$y$}
+
+					\psline[algebraic,linewidth=1.5pt,linecolor=black!60](1.25,-2.5)(1.25,2.5)
+
+				\end{psgraph}}
+			%
+			\rput(-7,7){e)}
+			%
+		\end{pspicture*}%
+		%-------------------------------------------------------------------------------
+		%
+	\end{minipage}\newline
+
+	\begin{solution}
+		\quad a), c) und d)
+	\end{solution}
+
+	%################################################################################
+	\question %4
+	%################################################################################
+	Die allgemeine Zuordnungsvorschrift einer linearen Funktion lautet $f(x)=mx+b$. Beschreibe die Bedeutung der Parameter $m$ und $b$.
+
+	\begin{solution}
+		Der Parameter $m$ beschreibt das Steigungsverhalten der linearen Funktion. Für $m > 0$ steigt die Gerade, für $m<0$ fällt sie. Für $m=0$ ergibt sich eine Parallele zur $x$-Achse. Die Steigung kann über das Steigungsdreieck veranschaulicht werden:
+
+		\hspace{15mm}\begin{minipage}{0.3\textwidth}
+			\psset{xunit=9mm,yunit=9mm}
+			%      \begin{center}
+			\begin{pspicture*}(-1,-1)(5,4.5)
+				\psaxes[labelFontSize=\scriptstyle,labels=none,ticks=none]{->}(0,0)(-0.5,-0.5)(4,4)[$x$,-90][$y$,180]
+
+				\psplot[plotpoints=200]{-0.5}{3.5}{x}
+
+				\psline(1,1)(3,1)
+				\rput(2,0.7){$\Delta x$}
+
+				\psline(3,1)(3,3)
+				\rput(3.4,2){$\Delta y$}
+
+				\psdot[dotstyle=+,dotsize=8pt](1,1)
+				\rput(0.7,1.5){$(x_1|y_1)$}
+
+				\psdot[dotstyle=+,dotsize=8pt](3,3)
+				\rput(2.7,3.5){$(x_2|y_2)$}
+
+			\end{pspicture*}
+			%      \end{center}
+		\end{minipage}
+		\begin{minipage}{0.3\textwidth}
+			\begin{align*}
+				m & =\frac{\Delta y}{\Delta x} \\[0.3cm]
+				  & =\frac{y_2-y_1}{x_2-x_1}
+			\end{align*}
+		\end{minipage}
+
+		Die Steigung einer linearen Funktion ist an jeder Stelle gleich.\newline
+
+		$b$ entspricht dem Schnittpunkt der Geraden mit der $y$-Achse.
+
+	\end{solution}
+	%################################################################################
+	\question %5
+	%################################################################################
+	Optional: Wie lauten die Zuordnungsvorschriften der im Folgenden abgebildeten linearen Funktionen?\newline
+	%################################################################################
+
+	\begin{minipage}{0.3\textwidth}
+		%
+		%-------------------------------------------------------------------------------
+		\begin{pspicture*}(-13,-12)(13,13)
+			\rput(-10,10){%
+				%
+				\psset{xAxisLabel=,yAxisLabel=}
+				\begin{psgraph}[axesstyle=none,labels=none,ticks=none](0,0)(-5,-5)(5,5){0.8\textwidth}{0.8\textwidth}
+
+					\multido{\ra=-4+1}{9}{%
+						\multido{\rb=-4+1}{9}{%
+							\psline[linecolor=black!15](\ra,-4)(\ra,4)
+							\psline[linecolor=black!15](-4,\rb)(4,\rb)
+						}}
+
+					\rput(0,0){%
+						%
+						\begin{psgraph}[axesstyle=axes,arrows=->,Dx=2,Dy=2,labels=all,ticks=all](0,0)(-5,-5)(5,5){0.8\textwidth}{0.8\textwidth}
+							%
+							\uput[-90](5,0){$x$}
+							\uput[180](0,5){$y$}
+
+							\psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-3}{4}{x-1}
+
+						\end{psgraph}}
+					%
+				\end{psgraph}}
+			%
+			\rput(-11,11){a)}
+			%
+		\end{pspicture*}%
+		%-------------------------------------------------------------------------------
+		%
+	\end{minipage}%
+	\hfill\begin{minipage}{0.3\textwidth}
+		%
+		%-------------------------------------------------------------------------------
+		\begin{pspicture*}(-13,-12)(13,13)
+			\rput(-10,10){%
+				%
+				\psset{xAxisLabel=,yAxisLabel=}
+				\begin{psgraph}[axesstyle=none,labels=none,ticks=none](0,0)(-5,-5)(5,5){0.8\textwidth}{0.8\textwidth}
+
+					\multido{\ra=-4+1}{9}{%
+						\multido{\rb=-4+1}{9}{%
+							\psline[linecolor=black!15](\ra,-4)(\ra,4)
+							\psline[linecolor=black!15](-4,\rb)(4,\rb)
+						}}
+
+					\rput(0,0){%
+						%
+						\begin{psgraph}[axesstyle=axes,arrows=->,Dx=2,Dy=2,labels=all,ticks=all](0,0)(-5,-5)(5,5){0.8\textwidth}{0.8\textwidth}
+							%
+							\uput[-90](5,0){$x$}
+							\uput[180](0,5){$y$}
+
+							\psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-0.5}{3.5}{-2*x+3}
+
+						\end{psgraph}}
+					%
+				\end{psgraph}}
+			%
+			\rput(-11,11){b)}
+			%
+		\end{pspicture*}%
+		%-------------------------------------------------------------------------------
+		%
+	\end{minipage}%
+	\hfill\begin{minipage}{0.3\textwidth}
+		%
+		%-------------------------------------------------------------------------------
+		\begin{pspicture*}(-13,-12)(13,13)
+			\rput(-10,10){%
+				%
+				\psset{xAxisLabel=,yAxisLabel=}
+				\begin{psgraph}[axesstyle=none,labels=none,ticks=none](0,0)(-5,-5)(5,5){0.8\textwidth}{0.8\textwidth}
+
+					\multido{\ra=-4+1}{9}{%
+						\multido{\rb=-4+1}{9}{%
+							\psline[linecolor=black!15](\ra,-4)(\ra,4)
+							\psline[linecolor=black!15](-4,\rb)(4,\rb)
+						}}
+
+					\rput(0,0){%
+						%
+						\begin{psgraph}[axesstyle=axes,arrows=->,Dx=2,Dy=2,labels=all,ticks=all](0,0)(-5,-5)(5,5){0.8\textwidth}{0.8\textwidth}
+							%
+							\uput[-90](5,0){$x$}
+							\uput[180](0,5){$y$}
+
+							\psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-4}{4}{2/3*x}
+
+						\end{psgraph}}
+					%
+				\end{psgraph}}
+			%
+			\rput(-11,11){c)}
+			%
+		\end{pspicture*}%
+		%-------------------------------------------------------------------------------
+		%
+	\end{minipage}%
+
+
+	\begin{solution}
+		\quad\begin{minipage}{0.3\textwidth}
+			a) $\displaystyle y=x-1$
+		\end{minipage}%
+		\hfill\begin{minipage}{0.3\textwidth}
+			b) $\displaystyle y=-2x+3$
+		\end{minipage}%
+		\hfill\begin{minipage}{0.3\textwidth}
+			c) $\displaystyle y=\frac{2}{3}x$
+		\end{minipage}
+	\end{solution}
+
+	% %################################################################################
+	% \question %6
+	% Zeichne die Graphen der folgenden Funktionen in ein gemeinsames Koordinatensystem (von Hand):\newline
+	% %################################################################################
+
+	% \hspace{1cm}\begin{minipage}{5cm}
+	%   \begin{enumerate}[label=\alph*)]
+	%     \item $f(x)=3x-4$
+	%     \item $f(x)=-x+2$
+	%   \end{enumerate}
+	% \end{minipage}
+	% \begin{minipage}{5cm}
+	%   \begin{enumerate}[label=\alph*)]
+	%     \setcounter{enumi}{2}
+	%     \item $f(x)=0{,}5x$
+	%     \item $\displaystyle f(x)=-\frac{2}{3}x+5$
+	%   \end{enumerate}
+	% \end{minipage}
+	% \begin{minipage}{5cm}
+	%   \begin{enumerate}[label=\alph*)]
+	%     \setcounter{enumi}{4}
+	%     \item $\displaystyle f(x)=\frac{3}{7}x-3$
+	%     \item $\displaystyle f(x)=-\frac{11}{4}x+6$
+	%   \end{enumerate}
+	% \end{minipage}
+
+	% \begin{solution}
+	%   $\Rightarrow$ könnt Ihr selbst mit Geogebra überprüfen. Die Strategie zum Zeichnen ist immer die gleiche: Zuerst wird der Schnittpunkt mit der $y$-Achse markiert. Von diesem aus wird die Steigung abgetragen. Dabei rechnet man die Steigung immer in einen Bruch um (bei ganzen Zahlen ist der Nenner einfach 1) und geht dann zuerst den Nenner (das ist unten) nach rechts zur Seite (zählen in Kästchen oder Zentimeter) und dann den Zähler (also oben) hoch, wenn die Steigung positiv ist und runter, wenn sie negativ ist. Dort angekommen markiert man einen zweiten Punkt. Beide Punkte verbinden $\Rightarrow$ fertig :-)
+	% \end{solution}
+	% %################################################################################
+	% \question %7
+	% \textbf{Berechne} die Schnittwinkel der Geraden aus Aufgabe 6:\newline
+	% %################################################################################
+
+	% \hspace{1cm}\begin{minipage}{5cm}
+	%   \begin{enumerate}[label=\alph*)]
+	%     \item b) und c)
+	%   \end{enumerate}
+	% \end{minipage}
+	% \begin{minipage}{5cm}
+	%   \begin{enumerate}[label=\alph*)]
+	%     \setcounter{enumi}{1}
+	%     \item b) und d)
+	%   \end{enumerate}
+	% \end{minipage}
+	% \begin{minipage}{5cm}
+	%   \begin{enumerate}[label=\alph*)]
+	%     \setcounter{enumi}{2}
+	%     \item a) und c)
+	%   \end{enumerate}
+	% \end{minipage}
+
+	% \begin{solution}
+	%   Hier betrachten wir kurz allgemein Winkel zwischen zwei Funktionen. Es gibt drei Fälle, wie Geraden zueinander liegen können: Beide Steigungen sind positiv, beide Steigungen sind negativ, eine Steigung ist positiv, eine negativ. Die Berechnung der Schnittwinkel kann man in den folgenden Graphiken nachvollziehen:
+
+	%   \begin{tabular}{ccc}
+
+	%     $m_1>0,~m_2>0$
+	%      &
+	%     $m_1<0,~m_2<0$
+	%      &
+	%     $m_1>0,~m_2<0$             \\
+
+	%     \psset{xunit=1cm,yunit=1cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+	%     \begin{pspicture*}(-1.5,-1.2)(3.5,3.5)
+	%       \psaxes[labelFontSize=\scriptstyle,labels=none,ticks=none]{->}(0,0)(-0.5,-1)(3,3)[$x$,-90][$y$,180]
+
+	%       \pswedge[fillstyle=solid,fillcolor=black!15,linecolor=black!15](0.66666,0.833333){7}{0}{26.56}
+
+	%       \pswedge[fillstyle=solid,fillcolor=black!40,linecolor=black!40](0.66666,0.833333){4}{0}{63.43}
+
+	%       \psarc(0.66666,0.833333){8.5}{26.56}{63.43}
+
+	%       \psplot[algebraic]{-0.25}{2.14}{0.5*x+0.5}
+	%       \psplot[algebraic]{-0.25}{1.5}{2*x-0.5}
+
+	%       \psline[linestyle=dashed](-0.5,0.833333)(3,0.833333)
+
+	%       \rput(1.5,1.5){$\alpha_1$}
+	%       \psline(1.35,1.4)(1,1.1)
+
+	%       \rput(2.3,1.1){$\alpha_2$}
+	%       \psline(2.05,1.15)(1.7,1.05)
+
+	%       \rput(1.8,2.1){$\varphi$}
+
+	%     \end{pspicture*}
+
+	%      &
+
+	%     \psset{xunit=1cm,yunit=1cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+	%     \begin{pspicture*}(-1.5,-1.2)(3.5,3.5)
+	%       \psaxes[labelFontSize=\scriptstyle,labels=none,ticks=none]{->}(0,0)(-0.5,-1)(3,3)[$x$,-90][$y$,180]
+
+	%       \pswedge[fillstyle=solid,fillcolor=black!15,linecolor=black!15](0.66666,0.833333){7}{-26.56}{0}
+
+	%       \pswedge[fillstyle=solid,fillcolor=black!40,linecolor=black!40](0.66666,0.833333){4}{-63.43}{0}
+
+	%       \psarc(0.66666,0.833333){8.5}{-63.43}{-26.56}
+
+	%       \psplot[algebraic]{-0.1}{2.14}{-0.5*x+1.167777}
+	%       \psplot[algebraic]{-0.1}{1.5}{-2*x+2.167777}
+
+	%       \psline[linestyle=dashed](-0.5,0.833333)(3,0.833333)
+
+	%       \rput(1.6,0.16666){$\alpha_1$}
+	%       \psline(1.35,0.26666)(1,0.56666)
+
+	%       \rput(2.3,0.46666){$\alpha_2$}
+	%       \psline(2.05,0.51666)(1.7,0.61666)
+
+	%       \rput(1.8,-0.43333){$\varphi$}
+
+	%     \end{pspicture*}
+
+	%      &
+
+	%     \psset{xunit=1cm,yunit=1cm,algebraic=true,dotstyle=o,dotsize=3pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+	%     \begin{pspicture*}(-1.5,-1.2)(3.5,3.5)
+	%       \psaxes[labelFontSize=\scriptstyle,labels=none,ticks=none]{->}(0,0)(-0.5,-1)(3,3)[$x$,-90][$y$,180]
+
+	%       \pswedge[fillstyle=solid,fillcolor=black!15,linecolor=black!15](0.66666,0.833333){7}{-26.56}{0}
+
+	%       \pswedge[fillstyle=solid,fillcolor=black!40,linecolor=black!40](0.66666,0.833333){4}{0}{63.43}
+
+	%       \psarc(0.66666,0.833333){9.5}{-26.56}{-18}
+
+	%       \psarc(0.66666,0.833333){9.5}{-6}{63.43}
+
+	%       \psplot[algebraic]{-0.25}{2.5}{-0.5*x+1.167777}
+	%       \psplot[algebraic]{-0.25}{1.5}{2*x-0.5}
+
+	%       \psline[linestyle=dashed](-0.5,0.833333)(3,0.833333)
+
+	%       \rput(1.5,1.5){$\alpha_1$}
+	%       \psline(1.35,1.4)(1,1.1)
+
+	%       \rput(2.3,0.46666){$\alpha_2$}
+	%       \psline(2.05,0.51666)(1.7,0.61666)
+
+	%       \rput(2.5,1.3){$\varphi$}
+
+	%     \end{pspicture*} \\
+
+	%     $\varphi=\alpha_1-\alpha_2$
+
+	%      &
+
+	%     $\varphi=\alpha_1-\alpha_2$
+
+	%      &
+
+	%     $\varphi=\alpha_1+\alpha_2$
+	%   \end{tabular}
+
+	%   \vspace{\baselineskip}
+
+	%   Dabei betrachten wir immer die Beträge der Winkel, die der Taschenrechner ausgibt. Der Winkel zwischen zwei Funktionen wird oft mit dem griechischen Buchstaben $\varphi$ ("`Phi"') bezeichnet, Ihr könnt natürlich auch jeden anderen griechischen Buchstaben verwenden.\newline
+
+	%   Grundsätzlich könnt Ihr Euch also merken, dass man die einzelnen Winkel subtrahiert, wenn die Vorzeichen der Steigungen gleich sind und addiert, wenn die Vorzeichen verschieden sind. Außerdem gibt es ja beim Schnitt von zwei Geraden immer zwei Winkel, die sich zu 180\textdegree~ergänzen. Als Schnittwinkel wird immer der kleinere von beiden definiert. Sollte also der errechnete Winkel größer sein als 90\textdegree, dann müsst Ihr ihn noch von 180\textdegree~subtrahieren, um den eigentlichen Schnittwinkel zu erhalten.\newline
+
+	%   \begin{minipage}{0.3\textwidth}
+	%     \setlength{\jot}{15pt}
+	%     \begin{enumerate}[label=\alph*)]
+	%       \item b) und c)
+	%             \begin{align*}
+	%               m_{\rm{b}} & =-1\Rightarrow \alpha_{\rm{b}}=-45^\circ        \\
+	%               m_{\rm{c}} & =0{,}5\Rightarrow \alpha_{\rm{c}}=26{,}6^\circ  \\
+	%               \varphi    & =|\alpha_{\rm{b}}|+\alpha_{\rm{c}}=71{,}6^\circ
+	%             \end{align*}
+	%     \end{enumerate}
+	%   \end{minipage}
+	%   \hfill\begin{minipage}{0.3\textwidth}
+	%     \setlength{\jot}{15pt}
+	%     \begin{enumerate}[label=\alph*)]
+	%       \setcounter{enumi}{1}
+	%       \item b) und d)
+	%             \begin{align*}
+	%               m_{\rm{b}} & =-1\Rightarrow \alpha_{\rm{b}}=-45^\circ               \\
+	%               m_{\rm{d}} & =-\frac{2}{3}\Rightarrow \alpha_{\rm{c}}=-33{,}7^\circ \\
+	%               \varphi    & =|\alpha_{\rm{b}}|-|\alpha_{\rm{d}}|=11{,}3^\circ
+	%             \end{align*}
+	%     \end{enumerate}
+	%   \end{minipage}
+	%   \hfill\begin{minipage}{0.3\textwidth}
+	%     \setlength{\jot}{15pt}
+	%     \begin{enumerate}[label=\alph*)]
+	%       \setcounter{enumi}{2}
+	%       \item a) und c)
+	%             \begin{align*}
+	%               m_{\rm{a}} & =3\Rightarrow \alpha_{\rm{a}}=71{,}6^\circ     \\
+	%               m_{\rm{c}} & =0{,}5\Rightarrow \alpha_{\rm{c}}=26{,}6^\circ \\
+	%               \varphi    & =|\alpha_{\rm{b}}|-|\alpha_{\rm{d}}|=45^\circ
+	%             \end{align*}
+	%     \end{enumerate}
+	%   \end{minipage}
+
+	% \end{solution}
+	% %################################################################################
+	% \question %8
+	% Bestimme \textbf{rechnerisch} jeweils die Zuordnungsvorschrift der Funktion, die die folgenden Bedingungen erfüllt:\newline
+	% %################################################################################
+
+	% \hspace{1cm}\begin{minipage}{0.9\textwidth}
+	%   \begin{enumerate}[label=\alph*)]
+	%     \item geht durch A$(-1\mid-2)$ und B$(3\mid6)$
+	%     \item geht durch Q$(2\mid5)$ und hat die Steigung $m=\frac{3}{4}$
+	%     \item schneidet die $y$-Achse bei $y=7$ und steht senkrecht auf $g(x)=5x+2$
+	%     \item schneidet die Koordinatenachsen bei $x=-3$ und $y=-1$
+	%     \item verläuft parallel zu $h(x)=2x$ und geht durch P$(-3\mid4)$
+	%     \item ** steht senkrecht auf $h(x)=\frac{1}{3}x+2$ und geht durch den Schnittpunkt von $i(x)=x-2$ und $k(x)=-x+6$
+	%     \item ** schneidet die $x$-Achse bei N$(8\mid0)$ unter dem Winkel $\alpha=71{,}6$\textdegree
+	%   \end{enumerate}
+	% \end{minipage}
+
+	% \begin{solution}
+	% \end{solution}
+	% %################################################################################
+	% \question %9
+	% Welche Bedingung müssen die beiden Steigungen $m_1$ und $m_2$ erfüllen, damit die Geraden $g_1$ und $g_2$ mit $g_1: y=m_1\cdot x+b_1$ und $g_2: y=m_2\cdot x+b_2$ parallel verlaufen?\newline
+	% %################################################################################
+	% \begin{solution}
+	%   Zwei Geraden $g_1$ und $g_2$ verlaufen parallel, falls ihre Steigungen gleich sind, falls also $m_1=m_2$ gilt.
+
+	% \end{solution}
+	% %################################################################################
+	% \question %10
+	% Welche Bedingung müssen die beiden Steigungen $m_1$ und $m_2$ erfüllen, damit die Geraden $g_1$ und $g_2$ mit $g_1: y=m_1\cdot x+b_1$ und $g_2: y=m_2\cdot x+b_2$ orthogonal verlaufen?\newline
+	% %################################################################################
+	% \begin{solution}
+	%   Zwei Geraden $g_1$ und $g_2$ verlaufen orthogonal, falls das Produkt ihrer beiden Steigungen $-1$ ergibt, falls also $m_1\cdot m_2=-1$ gilt.
+
+	% \end{solution}
+
+	% %################################################################################
+	% \question %11
+	% Bei welchen der im Folgenden abgebildeten Zuordnungen handelt es sich um Graphen einer quadratischen Funktion?\newline
+	% %################################################################################
+
+	% \begin{minipage}{0.16\textwidth}
+	%   %
+	%   %-------------------------------------------------------------------------------
+	%   \begin{pspicture*}(-8,-8)(8,8)
+	%     \rput(-6,6){%
+	%       %
+	%       \psset{xAxisLabel=,yAxisLabel=}
+	%       \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-8.5)(2.5,8.5){0.9\textwidth}{0.9\textwidth}
+	%         \uput[-90](2.5,0){$x$}
+	%         \uput[180](0,8.5){$y$}
+
+	%         \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{3.25*x^2-6}
+
+	%       \end{psgraph}}
+	%     %
+	%     \rput(-7,7){a)}
+	%     %
+	%   \end{pspicture*}%
+	%   %-------------------------------------------------------------------------------
+	%   %
+	% \end{minipage}%
+	% \hfill\begin{minipage}{0.16\textwidth}
+	%   %
+	%   %-------------------------------------------------------------------------------
+	%   \begin{pspicture*}(-8,-8)(8,8)
+	%     \rput(-6,6){%
+	%       %
+	%       \psset{xAxisLabel=,yAxisLabel=}
+	%       \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
+	%         \uput[-90](2.5,0){$x$}
+	%         \uput[180](0,2.5){$y$}
+
+	%         \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{-x^2+1.75}
+
+	%       \end{psgraph}}
+	%     %
+	%     \rput(-7,7){b)}
+	%     %
+	%   \end{pspicture*}%
+	%   %-------------------------------------------------------------------------------
+	%   %
+	% \end{minipage}%
+	% \hfill\begin{minipage}{0.16\textwidth}
+	%   %
+	%   %-------------------------------------------------------------------------------
+	%   \begin{pspicture*}(-8,-8)(8,8)
+	%     \rput(-6,6){%
+	%       %
+	%       \psset{xAxisLabel=,yAxisLabel=}
+	%       \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
+	%         \uput[-90](2.5,0){$x$}
+	%         \uput[180](0,2.5){$y$}
+
+	%         \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{(x+2)^(1/2)}
+	%         \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{-(x+2)^(1/2)}
+
+	%       \end{psgraph}}
+	%     %
+	%     \rput(-7,7){c)}
+	%     %
+	%   \end{pspicture*}%
+	%   %-------------------------------------------------------------------------------
+	%   %
+	% \end{minipage}%
+	% \hfill\begin{minipage}{0.16\textwidth}
+	%   %
+	%   %-------------------------------------------------------------------------------
+	%   \begin{pspicture*}(-8,-8)(8,8)
+	%     \rput(-6,6){%
+	%       %
+	%       \psset{xAxisLabel=,yAxisLabel=}
+	%       \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
+	%         \uput[-90](2.5,0){$x$}
+	%         \uput[180](0,2.5){$y$}
+
+	%         \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-1.9}{1.35}{(x+1)^3-2*(x+1)^2}
+
+	%       \end{psgraph}}
+	%     %
+	%     \rput(-7,7){d)}
+	%     %
+	%   \end{pspicture*}%
+	%   %-------------------------------------------------------------------------------
+	%   %
+	% \end{minipage}%
+	% \hfill\begin{minipage}{0.16\textwidth}
+	%   %
+	%   %-------------------------------------------------------------------------------
+	%   \begin{pspicture*}(-8,-8)(8,8)
+	%     \rput(-6,6){%
+	%       %
+	%       \psset{xAxisLabel=,yAxisLabel=}
+	%       \begin{psgraph}[arrows=->,labels=none,ticks=none](0,0)(-2.5,-2.5)(2.5,2.5){0.9\textwidth}{0.9\textwidth}
+	%         \uput[-90](2.5,0){$x$}
+	%         \uput[180](0,2.5){$y$}
+
+	%         \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2}{2}{0.25*x^4-2}
+
+	%       \end{psgraph}}
+	%     %
+	%     \rput(-7,7){e)}
+	%     %
+	%   \end{pspicture*}%
+	%   %-------------------------------------------------------------------------------
+	%   %
+	% \end{minipage}\newline
+	% \begin{solution}
+	%   \quad a) und b)
+	% \end{solution}
+
+	% %################################################################################
+	% \question %12
+	% Beschreibe den Einfluss einer Änderung der Werte von $a$, $b$ und $c$ in $y=a\cdot\left(x-b\right)^2+c$ auf den Graphen der Funktion.
+	% %################################################################################
+	% \begin{solution}
+	%   Beschreibe den Einfluss einer Änderung der Werte von $a$, $b$ und $c$ in $y=a\cdot\left(x-b\right)^2+c$ auf den Graphen der Funktion.
+
+	% \end{solution}
+	% %################################################################################
+	% \question %13
+	% Wie lauten die Zuordnungsvorschriften der im Folgenden abgebildeten quadratischen Funktionen?\newline
+	% %################################################################################
+
+	% \begin{minipage}{0.3\textwidth}
+	%   %
+	%   %-------------------------------------------------------------------------------
+	%   \begin{pspicture*}(-15,-15)(15,15)
+	%     \rput(-11.125,11.125){%
+	%       %
+	%       \psset{xAxisLabel=,yAxisLabel=}
+	%       \begin{psgraph}[axesstyle=none,labels=none,ticks=none](0,0)(-5,-3)(5,7){0.9\textwidth}{0.9\textwidth}
+
+	%         \multido{\ra=-4+1}{9}{%
+	%           \multido{\rb=-2+1}{9}{%
+	%             \psline[linecolor=black!15](\ra,-2)(\ra,6)
+	%             \psline[linecolor=black!15](-4,\rb)(4,\rb)
+	%           }}
+
+	%         \rput(0,2){%
+	%           %
+	%           \begin{psgraph}[axesstyle=axes,arrows=->,Dx=2,Dy=2,labels=all,ticks=all](0,0)(-5,-3)(5,7){0.9\textwidth}{0.9\textwidth}
+	%             %
+	%             \uput[-90](5,0){$x$}
+	%             \uput[180](0,7){$y$}
+
+	%             \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-2.45}{2.45}{x^2}
+
+	%           \end{psgraph}}
+	%         %
+	%       \end{psgraph}
+	%     }
+	%     %
+	%     \rput(-13.125,13.125){a)}
+	%     %
+	%   \end{pspicture*}%
+	%   %-------------------------------------------------------------------------------
+	%   %
+	% \end{minipage}%
+	% \hfill\begin{minipage}{0.3\textwidth}
+	%   %
+	%   %-------------------------------------------------------------------------------
+	%   \begin{pspicture*}(-15,-15)(15,15)
+	%     \rput(-11.125,11.125){%
+	%       %
+	%       \psset{xAxisLabel=,yAxisLabel=}
+	%       \begin{psgraph}[axesstyle=none,labels=none,ticks=none](0,0)(-3,-3)(7,7){0.9\textwidth}{0.9\textwidth}
+
+	%         \multido{\ra=-2+1}{9}{%
+	%           \multido{\rb=-2+1}{9}{%
+	%             \psline[linecolor=black!15](\ra,-2)(\ra,6)
+	%             \psline[linecolor=black!15](-2,\rb)(6,\rb)
+	%           }}
+
+	%         \rput(2,2){%
+	%           %
+	%           \begin{psgraph}[axesstyle=axes,arrows=->,Dx=2,Dy=2,labels=all,ticks=all](0,0)(-3,-3)(7,7){0.9\textwidth}{0.9\textwidth}
+	%             %
+	%             \uput[-90](7,0){$x$}
+	%             \uput[180](0,7){$y$}
+
+	%             \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{2}{6}{(x-4)^2+2}
+
+	%           \end{psgraph}}
+	%         %
+	%       \end{psgraph}
+	%     }
+	%     %
+	%     \rput(-13.125,13.125){b)}
+	%     %
+	%   \end{pspicture*}%
+	%   %-------------------------------------------------------------------------------
+	%   %
+	% \end{minipage}%
+	% \hfill\begin{minipage}{0.3\textwidth}
+	%   %
+	%   %-------------------------------------------------------------------------------
+	%   \begin{pspicture*}(-15,-15)(15,15)
+	%     \rput(-11.125,11.125){%
+	%       %
+	%       \psset{xAxisLabel=,yAxisLabel=}
+	%       \begin{psgraph}[axesstyle=none,labels=none,ticks=none](0,0)(-7,-3)(3,7){0.9\textwidth}{0.9\textwidth}
+
+	%         \multido{\ra=-6+1}{9}{%
+	%           \multido{\rb=-2+1}{9}{%
+	%             \psline[linecolor=black!15](\ra,-2)(\ra,6)
+	%             \psline[linecolor=black!15](-6,\rb)(2,\rb)
+	%           }}
+
+	%         \rput(-2,2){%
+	%           %
+	%           \begin{psgraph}[axesstyle=axes,arrows=->,Dx=2,Dy=2,labels=all,ticks=all](0,0)(-7,-3)(3,7){0.9\textwidth}{0.9\textwidth}
+	%             %
+	%             \uput[-90](3,0){$x$}
+	%             \uput[180](0,7){$y$}
+
+	%             \psplot[algebraic,linewidth=1.5pt,linecolor=black!60]{-5.74}{1.74}{-0.5*(x+2)^2+5}
+
+	%           \end{psgraph}}
+	%         %
+	%       \end{psgraph}
+	%     }
+	%     %
+	%     \rput(-13.125,13.125){c)}
+	%     %
+	%   \end{pspicture*}%
+	%   %-------------------------------------------------------------------------------
+	%   %
+	% \end{minipage}%
+	% \begin{solution}
+	%   \quad\begin{minipage}{0.3\textwidth}
+	%     a) $\displaystyle y=x^2$
+	%   \end{minipage}%
+	%   \hfill\begin{minipage}{0.3\textwidth}
+	%     b) $\displaystyle y=\left(x-4\right)^2+2$
+	%   \end{minipage}%
+	%   \hfill\begin{minipage}{0.3\textwidth}
+	%     c) $\displaystyle y=-\frac{1}{2}\cdot\left(x+2\right)^2+5$
+	%   \end{minipage}
+	% \end{solution}
+	% %################################################################################
+	% \question %14
+	% Gib für die im Folgenden angegebenen Funktionen jeweils die Koordinaten des Scheitelpunktes an und zeichne den entsprechenden Funktionsgraphen.\newline
+	% %################################################################################
+
+	% \hspace{1cm}\begin{minipage}{5.5cm}
+	%   \begin{enumerate}[label=\alph*)]
+	%     \item $f(x)=(x-1)^2-2$
+	%     \item $f(x)=2\cdot(x+2)^2-4$
+	%   \end{enumerate}
+	% \end{minipage}
+	% \begin{minipage}{5.5cm}
+	%   \begin{enumerate}[label=\alph*)]
+	%     \setcounter{enumi}{2}
+	%     \item $f(x)=-x^2+3$
+	%     \item $f(x)=0{,}5\cdot(x-3)^2-1$
+	%   \end{enumerate}
+	% \end{minipage}
+
+	% \begin{solution}
+	%   $\Rightarrow$ auch hier könnt Ihr Eure Zeichnungen mit Geogebra überprüfen. Zum Zeichnen von quadratischen Funktionen wird immer erst der Scheitelpunkt der Funktion markiert. Von diesem Scheitelpunkt aus geht man eins nach rechts und $a$ nach oben für $|a|>0$, $a$ nach unten für $|a|<0$ und markiert die Stelle. Anschließend geht man vom Scheitelpunkt aus eins nach links und ebenfalls wieder den Wert von $a$ nach oben/unten. Mit Hilfe dieser drei Punkte kann der Graph skizziert werden.
+
+	% \end{solution}
+	% %################################################################################
+	% \question %15
+	% Welche quadratische Funktion erfüllt jeweils die beschriebenen Eigenschaften?\newline
+	% %################################################################################
+
+	% \hspace{1cm}\begin{minipage}{0.9\textwidth}
+	%   \begin{enumerate}[label=\alph*)]
+	%     \item Normalparabel um 4 nach rechts verschoben
+	%     \item nach unten geöffnete Parabel mit Scheitelpunkt S$(-2\mid3)$, mit Faktor 3 in $y$-Richtung gestreckt
+	%     \item ** Scheitelpunkt bei S$(4\mid5)$, geht durch A$(1\mid23)$
+	%   \end{enumerate}
+	% \end{minipage}
+
+	% \begin{solution}
+	%   \begin{enumerate}[label=\alph*)]
+	%     \item Normalparabel um 4 nach rechts verschoben
+	%           %
+	%           \begin{equation*}
+	%             f(x)=(x-4)^2
+	%           \end{equation*}
+
+	%     \item nach unten geöffnete Parabel mit Scheitelpunkt S$(-2\mid3)$, mit Faktor 3 in $y$-Richtung gestreckt
+	%           %
+	%           \begin{equation*}
+	%             f(x)=-3\cdot(x+2)^2+3
+	%           \end{equation*}
+	%     \item ** Scheitelpunkt bei S$(4\mid5)$, geht durch A$(1\mid23)$
+
+
+	%           \begin{align*}
+	%             f(x) & =a\cdot(x-4)^2+5             \\[3mm]
+	%             23   & =a\cdot(1-4)^2+5             \\
+	%             18   & =9a\quad\Rightarrow\quad a=2 \\[3mm]
+	%             f(x) & =2\cdot(x-4)^2+5
+	%           \end{align*}
+
+	%   \end{enumerate}
+	% \end{solution}
 
 \end{questions}
 
