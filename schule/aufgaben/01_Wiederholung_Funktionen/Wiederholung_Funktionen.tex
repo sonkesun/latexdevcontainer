@@ -2,12 +2,20 @@
 %% arara: pdflatex: {shell: yes}
 %% arara: pdflatex: {shell: yes}
 %% arara: clean: { extensions: [ log, aux, nav, out, snm, vrb, toc ] }
-\documentclass[a4paper,ngerman,12pt]{exams}
+\documentclass[a4paper,ngerman,12pt]{exam}
 \input{../packages}
-\input{../header}
 \usepackage[pdf]{pstricks}
 \usepackage{pstricks-add}
 \usepackage{auto-pst-pdf}
+%\usepackage{pgf}
+%\usepackage{pst-node}
+%\usepackage{pst-plot}
+%\usepackage{pst-tools}
+%\usepackage{multido}
+%\usepackage{pst-arrow}
+%\usepackage{environ,pst-3d,pst-math,pst-calculate,xstring,catchfile,pst-pdf,luatex85,preview}
+\input{../header}
+
 
 
 \firstpageheader{Mathematik 11h (Wissel)\\\today}{Wiederholung des Themas Funktionen}{\includegraphics[scale=0.38]{../logo.jpg}}
@@ -20,7 +28,7 @@
 
 \vspace*{0.3cm}
 \begin{center}
-	\huge\bfseries Handout 01:\\ Lineare Funktionen
+	\huge\bfseries Handout 01:\\ Lineare Funktionen 01
 \end{center}
 
 \section*{Hausaufgabe}
