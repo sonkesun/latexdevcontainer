@@ -9,7 +9,7 @@
     ],
     "shutdownAction": "stopCompose",
     "workspaceFolder": "/workspace",
-    "postCreateCommand": "tlmgr install babel-german collection-fontsrecommended booktabs csquotes paralist multirow setspace listings xcolor pdfpages caption subfig  enumitem wrapfig eurosym siunitx polynom ifsym siunitx wasysym units mnsymbol stackengine listings pdflscape wasysym pstricks-add pstricks auto-pst-pdf  && texhash",
+    "postCreateCommand": "tlmgr --self --all update && tlmgr install babel-german collection-fontsrecommended booktabs csquotes paralist multirow setspace xcolor pdfpages caption subfig  enumitem wrapfig eurosym siunitx polynom ifsym siunitx wasysym units mnsymbol stackengine listings pdflscape wasysym pstricks-add pstricks auto-pst-pdf  && texhash",
     "extensions": [
         "james-yu.latex-workshop",
         // Git
